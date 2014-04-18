@@ -7,7 +7,7 @@ class ApiController < ActionController::Base
   respond_to :json
 
   def cors_set_access_control_headers
-    headers['Access-Control-Allow-Origin'] = 'http://collier-bloccit.herokuapp.com'
+    headers['Access-Control-Allow-Origin'] = '*'
     headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
     headers['Access-Control-Allow-Headers'] = 'Content-Type'
     headers['Access-Control-Max-Age'] = "1728000"
@@ -15,7 +15,7 @@ class ApiController < ActionController::Base
   end
 
   def cors_preflight_check
-    headers['Access-Control-Allow-Origin'] = 'http://collier-bloccit.herokuapp.com'
+    headers['Access-Control-Allow-Origin'] = '*'
     headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
     headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version'
     headers['Access-Control-Max-Age'] = '1728000'
