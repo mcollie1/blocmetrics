@@ -1,10 +1,17 @@
 class EventsController < ApiController
   skip_before_action :verify_authenticity_token
+  respond_to :json
 
   def index
+    @events = Event.all
   end
+
   # POST /events.json
   def create
+    respond_to do |format|
+      format.json { head :ok }
+    end
+
     @event = Event.create!(event_params)
     #Parameters:
       #{
@@ -17,6 +24,6 @@ class EventsController < ApiController
   private
 
   def event_params
-    params.require(:event).permit(:name, :created_at, :updated_at)
+    params.require(:event).permit(:name, :created_at, :updated_at, :topic_name)
   end
 end
