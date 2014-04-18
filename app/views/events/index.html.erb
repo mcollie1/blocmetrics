@@ -1,2 +1,8 @@
-<h1><%= @events.last.name %></h1>
-<h1><%= @events.last.topic_name %></h1>
+<h1>
+  <% if Event.count > 0 %>
+    <%= @events.last.name %>
+    <div>
+    <%= @events.last.topic_name %>
+    </div>
+  <% end %>
+</h1>
