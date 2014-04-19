@@ -3,6 +3,9 @@ class EventsController < ApiController
   respond_to :json
 
   def index
+    respond_to do |format|
+      format.html #index.html.erb
+    end
     @events = Event.all
   end
 
