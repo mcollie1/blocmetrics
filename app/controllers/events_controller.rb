@@ -3,9 +3,6 @@ class EventsController < ApiController
   respond_to :json
 
   def index
-    respond_to do |format|
-      format.json { head :ok }
-    end
     @events = Event.all
   end
 
