@@ -1,9 +1,6 @@
 <h1>
   <% if Event.count > 0 %>
     <%= @events.last.name %>
-    <div>
-    <%= @events.last.topic_name %>
-    </div>
   <% else %>
     <%= nil %>
   <% end %>
