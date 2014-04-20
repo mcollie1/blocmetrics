@@ -12,22 +12,23 @@ class EventsController < ApiController
       format.json { head :ok }
     end
 
-    if Event.count > 0 # if there are application events?
-      event_name = params['name']
-      events = Event.all
-      names = events.map { |b| b["name"] }
+    @event = Event.create!(event_params)
+    # if Event.count > 0 # if there are application events?
+      #event_name = params['name']
+      #events = Event.all
+      #names = events.map { |b| b["name"] }
 
-      if names.include?(event_name)
-        event = events.find_by_name(event_name)
-        event.parameters.create!(parameter_params)
-      else
-        new_event = Event.create!(event_params)
-        new_event.parameters.create!(parameter_params)
-      end
-    else #if no event exists yet
-      first_event = Event.create!(event_params)
-      first_event.parameters.create!(parameter_params)
-    end
+      #if names.include?(event_name)
+        #event = events.find_by_name(event_name)
+        #event.parameters.create!(parameter_params)
+      #else
+        #new_event = Event.create!(event_params)
+        #new_event.parameters.create!(parameter_params)
+      #end
+    #else #if no event exists yet
+      #first_event = Event.create!(event_params)
+      #first_event.parameters.create!(parameter_params)
+    #end
     #Parameters:
       #{
         #name: "event name; required",
@@ -39,7 +40,7 @@ class EventsController < ApiController
   private
 
   def event_params
-    params.require(:event).permit(:name, :created_at, :updated_at)
+    params.require(:event).permit(:name, :created_at, :updated_at, :topic_name)
   end
 
   def parameter_params
