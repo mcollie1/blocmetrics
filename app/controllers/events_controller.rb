@@ -15,7 +15,7 @@ class EventsController < ApiController
     if Event.count > 0 # if there are application events?
       event_name = params['name']
       events = Event.all
-      names = events.map { |b| b["name"] }
+      names = events.map { |e| e["name"] }
 
       if names.include?(event_name)
         event = events.find_by_name(event_name)
