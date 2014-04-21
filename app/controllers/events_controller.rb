@@ -8,11 +8,11 @@ class EventsController < ApiController
 
   # POST /events.json
   def create
+    Event.create!(event_params)
+
     respond_to do |format|
       format.json { head :ok }
     end
-
-    Event.create!(event_params)
   end
 
   private
