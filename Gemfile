@@ -55,5 +55,4 @@ group :development do
 end
 
 #charts
-gem 'chartjs-ror'
 gem "chartkick"

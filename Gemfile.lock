@@ -27,8 +27,6 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.2)
     builder (3.1.4)
-    chartjs-ror (1.0.1)
-      activesupport (> 3)
     chartkick (1.2.4)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -122,7 +120,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  chartjs-ror
   chartkick
   coffee-rails (~> 4.0.0)
   haml-rails

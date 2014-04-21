@@ -1,3 +1,4 @@
 <div>
-  <%= pie_chart Event.group(:topic_name).count %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+  <%= pie_chart Event.group(:name).count %>
 </div>
