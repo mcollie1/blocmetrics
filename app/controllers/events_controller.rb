@@ -9,7 +9,7 @@ class EventsController < ApiController
   # POST /events.json
   def create
     @event = Event.create!(event_params)
-    @event.parameters.create!
+    @event.parameters.create!(event_params)
 
     respond_to do |format|
       format.html
