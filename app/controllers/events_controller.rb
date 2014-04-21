@@ -43,6 +43,6 @@ class EventsController < ApiController
   end
 
   def parameter_params
-    params.require(:event).permit(:topic_name)
+    params.require(:parameter).permit(:topic_name)
   end
 end
