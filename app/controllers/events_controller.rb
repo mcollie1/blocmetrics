@@ -8,17 +8,17 @@ class EventsController < ApiController
 
   # POST /events.json
   def create
-    Event.create!(event_params)
-    
     respond_to do |format|
       format.json { head :ok }
     end
+
+    Event.create!(event_params)
   end
 
   private
 
   def event_params
-    puts "**** #{params.to_yaml}"
+    #puts "**** #{params.to_yaml}"
     
     params.require(:event).permit(:name, :parameters => [:topic_name])
   end
