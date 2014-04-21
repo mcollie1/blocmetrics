@@ -19,6 +19,7 @@ class EventsController < ApiController
 
   def event_params
     puts "**** #{params.to_yaml}"
-    params.require(:event).permit(:name, parameters_attributes: [:topic_name])
+    
+    params.require(:event).permit(:name, :parameters => [:topic_name])
   end
 end
