@@ -56,3 +56,5 @@ end
 
 #charts
 gem "chartkick"
+
+gem 'bootstrap-sass', '~> 3.1.1'
