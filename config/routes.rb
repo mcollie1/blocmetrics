@@ -1,5 +1,6 @@
 Blocmetrics::Application.routes.draw do
 
+  devise_for :users
   match 'events', to: 'events#index', via: :get
 
   post :events, to: 'events#create'
