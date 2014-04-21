@@ -19,7 +19,7 @@ class EventsController < ApiController
 
       if names.include?(event_name)
         event = events.find_by_name(event_name)
-        event.parameters.create(parameter_params)
+        event.parameters.create!(parameter_params)
       else
         new_event = Event.create!(event_params)
         new_event.parameters.create!(parameter_params)
@@ -43,6 +43,8 @@ class EventsController < ApiController
   end
 
   def parameter_params
+    puts "**** params.to_yaml"
+
     params.require(:parameter).permit(:topic_name)
   end
 end
