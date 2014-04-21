@@ -19,14 +19,14 @@ class EventsController < ApiController
 
       if names.include?(event_name)
         event = events.find_by_name(event_name)
-        event.parameters.create!(parameter_params)
+        event.parameters.build(parameter_params)
       else
         new_event = Event.create!(event_params)
-        new_event.parameters.create!(parameter_params)
+        new_event.parameters.build(parameter_params)
       end
     else #if no event exists yet
       first_event = Event.create!(event_params)
-      first_event.parameters.create!(parameter_params)
+      first_event.parameters.build(parameter_params)
     end
     #Parameters:
       #{

@@ -53,3 +53,7 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
 end
+
+#charts
+gem 'chartjs-ror'
+gem "chartkick"
