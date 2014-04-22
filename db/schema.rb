@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20140422164523) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "topic_name"
-    t.integer  "app_user",    limit: 255
+    t.integer  "app_user"
     t.string   "application"
     t.string   "app_owner"
   end
