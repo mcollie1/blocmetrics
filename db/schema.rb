@@ -11,14 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421191623) do
+ActiveRecord::Schema.define(version: 20140422041015) do
 
   create_table "events", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "topic_name"
+    t.string   "app_user"
+    t.string   "application"
+    t.string   "app_owner"
   end
+
+  add_index "events", ["app_owner"], name: "index_events_on_app_owner"
+  add_index "events", ["app_user"], name: "index_events_on_app_user"
+  add_index "events", ["application"], name: "index_events_on_application"
 
   create_table "parameters", force: true do |t|
     t.string   "name"

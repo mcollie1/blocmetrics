@@ -49,6 +49,8 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    groupdate (2.1.0)
+      activerecord (>= 3.0.0)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -140,6 +142,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   figaro
+  groupdate
   haml-rails
   hpricot
   jbuilder (~> 1.2)
