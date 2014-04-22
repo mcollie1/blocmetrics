@@ -12,7 +12,6 @@ class EventsController < ApiController
   
 
     respond_to do |format|
-      format.html
       format.json { head :ok }
       format.js
     end
