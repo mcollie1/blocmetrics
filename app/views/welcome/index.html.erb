@@ -2,11 +2,13 @@
 <div class="jumbotron">
   <h1>Blocmetrics</h1>
   <p> Know how users interact with your app!</p>
-  <p>
+  <div class="row">
+    <div class='col-md-6'>
       <%= pie_chart({"Football" => 10, "Basketball" => 5, "Soccer" => 8, "Baseball" => 4}) %> 
-      </br> 
+    </div>
+    <div class="col-md-6">
       <%= line_chart({20.day.ago => 5, 300.day.ago => 4, "2013-11-07 00:00:00 UTC" => 7}) %>
-  </p>
+    </div>
 </div>
 
 
