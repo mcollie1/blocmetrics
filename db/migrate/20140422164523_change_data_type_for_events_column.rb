@@ -4,7 +4,7 @@ class ChangeDataTypeForEventsColumn < ActiveRecord::Migration
       t.change :app_user, :integer
     end
 
-    change_column :events, :app_user 'integer USING CAST(app_user AS integer)'
+    change_column :events, :app_user, 'integer USING CAST(app_user AS integer)'
   end
   
 end
