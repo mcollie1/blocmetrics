@@ -13,8 +13,8 @@
         <small>* id-0 is non-user activity</small>
       </div>
       <div class="col-md-6">
-        <h5 class="text-centered">TBD</h5>
-        <%= line_chart({20.day.ago => 5, 300.day.ago => 4, "2013-05-07 00:00:00 UTC" => 7}) %>
+        <h5 class="text-centered">Activity by Day</h5>
+        <%= line_chart @events.group_by_day(:created_at).count %>
       </div>
     </div>
   <% else %>

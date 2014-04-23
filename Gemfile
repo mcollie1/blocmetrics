@@ -62,4 +62,5 @@ gem 'devise'
 gem 'figaro'
 gem 'groupdate'
 gem 'faker'
-gem 'pundit'
+
+

@@ -8,8 +8,6 @@ class EventsController < ApiController
   # POST /events.json
   def create
     app_owner = params['app_owner']
-    puts "*** #{params[app_owner]}"
-    puts "*** #{params['app_owner']}"
     user = User.find_by_email(app_owner)
     user.events.create!(event_params)
   
