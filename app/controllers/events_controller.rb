@@ -3,9 +3,6 @@ class EventsController < ApiController
   respond_to :json
 
   def index
-    @events = Event.where(app_owner: current_user.email)
-    event = @events.first
-    @application_name = event.application
   end
 
   # POST /events.json
