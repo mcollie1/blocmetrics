@@ -3,7 +3,9 @@ class EventsController < ApiController
   respond_to :json
 
   def index
-    @events = Event.all
+    @events = Event.where(app_owner: '#{current_user.email}').all
+    event = Event.where(app_owner: '#{current_user.email}').first
+    @application_name = event.application
   end
 
   # POST /events.json
@@ -24,4 +26,5 @@ class EventsController < ApiController
     
     params.require(:event).permit(:name, :topic_name, :app_user, :app_owner, :application)
   end
+
 end
