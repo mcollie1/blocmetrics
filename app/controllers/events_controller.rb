@@ -3,14 +3,16 @@ class EventsController < ApiController
   respond_to :json
 
   def index
-    #@events = Event.where(app_owner: '#{current_user.email}').all
-    #event = @events.first
-    #@application_name = event.application
+    @events = Event.where(app_owner: current_user.email)
+    event = @events.first
+    @application_name = event.application
   end
 
   # POST /events.json
   def create
-    Event.create!(event_params)
+    app_owner = params['app_owner']
+    user = User.find_by_email(app_owner)
+    user.events.create!(event_params)
   
 
     respond_to do |format|

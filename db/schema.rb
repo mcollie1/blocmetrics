@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422164523) do
+ActiveRecord::Schema.define(version: 20140423162034) do
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -21,11 +21,13 @@ ActiveRecord::Schema.define(version: 20140422164523) do
     t.integer  "app_user"
     t.string   "application"
     t.string   "app_owner"
+    t.integer  "user_id"
   end
 
   add_index "events", ["app_owner"], name: "index_events_on_app_owner"
   add_index "events", ["app_user"], name: "index_events_on_app_user"
   add_index "events", ["application"], name: "index_events_on_application"
+  add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "parameters", force: true do |t|
     t.string   "name"
@@ -55,6 +57,7 @@ ActiveRecord::Schema.define(version: 20140422164523) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
