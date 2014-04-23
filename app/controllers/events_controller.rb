@@ -4,7 +4,7 @@ class EventsController < ApiController
 
   def index
     @events = Event.where(app_owner: '#{current_user.email}').all
-    event = Event.where(app_owner: '#{current_user.email}').first
+    event = @events.first
     @application_name = event.application
   end
 
