@@ -1,6 +1,6 @@
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <div class="jumbotron">
-  <% if current.user.present? %>
+  <% if current_user.present? %>
     <h3> Event Data for Application: <%= @application_name %></h3>
     <div class="row">
       <div class="col-md-6">
