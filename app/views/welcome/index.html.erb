@@ -4,9 +4,11 @@
   <p> Know how users interact with your app!</p>
   <div class="row">
     <div class='col-md-6'>
+      <h5 class="text-centered">Type of Sport Most Viewed by Users</h5>
       <%= pie_chart({"Football" => 10, "Basketball" => 5, "Soccer" => 8, "Baseball" => 4}) %> 
     </div>
     <div class="col-md-6">
+      <h5 class="text-centered">Average Site Visits a Week Per User</h5>
       <%= line_chart({20.day.ago => 5, 300.day.ago => 4, "2013-11-07 00:00:00 UTC" => 7}) %>
     </div>
 </div>
