@@ -17,7 +17,7 @@ Made with my mentor at [Bloc](http://bloc.io)
 
 Add the JavaScript snippet to your code right before the </body> tag in the webpage(s) you wish to track.
 
-\\\
+```
 <script> 
 $(document).ready(function (){
     // track a client-side event using the Blocmetrics analytics service
@@ -38,13 +38,13 @@ $(document).ready(function (){
   };
   _bm_request.send(JSON.stringify(_bm_event));
 }());</script>
-\\\
+```
 
 ##**Custom Attributes**
 
 The JavaScript snippet is compatible with customized attributes. Simply add additonal properties.  For instance,
 
-\\\
+```
   var _bm_event = {
     name: "Page Views",
     application: "Reddit", 
@@ -52,7 +52,7 @@ The JavaScript snippet is compatible with customized attributes. Simply add addi
     app_user: ex <%= current_user ? current_user.id : 0 %>, // --> where 0 represents non-user activity
     app_owner: "your_domain_email" // admin, general email to synch app with Blocmetrics view for app_owner  
   }
-\\\
+```
 
 **Usage**
 
