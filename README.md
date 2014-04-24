@@ -15,7 +15,7 @@ Made with my mentor at [Bloc](http://bloc.io)
 
 **Installation**
 
-Add the JavaScript snippet to your code right before the </body> tag in the webpage(s) you wish to track.
+Add the JavaScript snippet to your code right before the `</body>` tag in the webpage(s) you wish to track.
 
 ```
 <script> 
