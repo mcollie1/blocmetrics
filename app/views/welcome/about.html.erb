@@ -1,2 +1,53 @@
-<h1> Welcome#about</h1>
-<p> Find me in app/views/welcome/about.html.erb</p>
+<h1> About Blocmetrics</h1>
+<p> Blocmetrics is an analytic service and tracking tool for you to track events on your applications.</p>
+
+<div>With Blocmetrics, you can: </div>
+  <ul> * Track events on your website with minimal Javascript embedded in your page's view </ul>
+  <ul> * Sends data to Blocmetrics application where you can login and view a dashboard of your events </ul>
+  <ul> * Renders charts illustrating events data </ul>
+
+
+<h3>Installation</h3>
+
+<div class="media">
+  Add the JavaScript snippet to your code right before the <code>&lt;/body&gt;</code> tag in the webpage(s) you wish to track
+</div>
+
+
+<pre>&lt;script&gt; 
+$(document).ready(function (){
+    // track a client-side event using the Blocmetrics analytics service
+  var _bm_event = {
+    name: "event name, required",
+    application: "application_name_here",
+    property_1: 'some_value', 
+    property_2: 'some value',
+    app_owner: "your_domain_email" // admin, general email to synch app with Blocmetrics view for app_owner  
+  }
+
+  var _bm_request = new XMLHttpRequest();
+  _bm_request.open("POST", "http://collier-blocmetrics.herokuapp.com/events", true);
+  _bm_request.setRequestHeader('Content-Type', 'application/json');
+  _bm_request.onreadystatechange = function() {
+    // this function runs when the Ajax request changes state.
+    // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+  };
+  _bm_request.send(JSON.stringify(_bm_event));
+}());
+&lt;/script&gt;</pre>
+
+<h3>Custom Attributes</h3>
+
+<div class="media">
+  The JavaScript snippet is compatible with customized attributes. Simply add additonal properties.  For instance:
+</div>
+
+<pre>
+  var _bm_event = {
+    name: "Page Views",
+    application: "Reddit", 
+    topic_name: "< %= @topic.name %>",
+    app_user: ex < %= current_user ? current_user.id : 0 %>, // --> where 0 represents non-user activity
+    app_owner: "your_domain_email" // admin, general email to synch app with Blocmetrics view for app_owner  
+  }
+</pre>
