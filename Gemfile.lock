@@ -53,13 +53,6 @@ GEM
       rails (>= 3, < 5)
     groupdate (2.1.0)
       activerecord (>= 3.0.0)
-    haml (4.0.5)
-      tilt
-    haml-rails (0.5.3)
-      actionpack (>= 4.0.1)
-      activesupport (>= 4.0.1)
-      haml (>= 3.1, < 5.0)
-      railties (>= 4.0.1)
     hike (1.2.3)
     hpricot (0.8.6)
     i18n (0.6.9)
@@ -146,7 +139,6 @@ DEPENDENCIES
   faker
   figaro
   groupdate
-  haml-rails
   hpricot
   jbuilder (~> 1.2)
   jquery-rails
